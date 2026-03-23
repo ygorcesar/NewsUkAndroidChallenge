@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">NewsUkAndroidChallenge</string>
+    <string name="top_users_title">Top StackOverflow Users</string>
+    <string name="retry">Retry</string>
+    <string name="follow">Follow</string>
+    <string name="unfollow">Unfollow</string>
+    <string name="reputation_format">Reputation: %1$s</string>
+    <string name="profile_image_content_description">%1$s profile image</string>
 </resources>

@@ -6,6 +6,7 @@ import com.example.newsukandroidchallenge.domain.usecase.GetUsersUseCase
 import com.example.newsukandroidchallenge.domain.usecase.ToggleFollowUseCase
 import com.example.newsukandroidchallenge.presentation.model.UsersUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -30,7 +31,7 @@ class UsersViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.value = UsersUiState.Loading
             getUsersUseCase.invoke().fold(
-                onSuccess = { users -> _uiState.value = UsersUiState.Success(users) },
+                onSuccess = { users -> _uiState.value = UsersUiState.Success(users.toImmutableList()) },
                 onFailure = { error ->
                     _uiState.value = UsersUiState.Error(error.message ?: "Failed to load users")
                 }
@@ -50,7 +51,7 @@ class UsersViewModel @Inject constructor(
                         } else {
                             user
                         }
-                    }
+                    }.toImmutableList()
                 )
             }
         }

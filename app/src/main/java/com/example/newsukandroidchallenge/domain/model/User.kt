@@ -1,7 +1,9 @@
 package com.example.newsukandroidchallenge.domain.model
 
+import androidx.compose.runtime.Immutable
 import com.example.newsukandroidchallenge.util.SocialCountFormatter
 
+@Immutable
 data class User(
     val id: Int,
     val name: String,

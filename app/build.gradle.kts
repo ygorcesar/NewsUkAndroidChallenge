@@ -70,6 +70,9 @@ dependencies {
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
 
+    // Immutable Collections
+    implementation(libs.kotlinx.collections.immutable)
+
     // Testing
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
