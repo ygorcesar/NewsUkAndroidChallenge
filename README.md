@@ -2,6 +2,12 @@
 
 An Android application that displays the top 20 StackOverflow users by reputation with follow/unfollow functionality.
 
+## Demo
+
+<p align="center">
+  <img src="app-demo.gif" width="300" alt="App Demo"/>
+</p>
+
 ## Architecture
 
 The app follows **MVVM + Clean Architecture** with three main layers:
